@@ -6,10 +6,10 @@ xhr.onload = () => {
     if (xhr.status === 200) {
         const data = JSON.parse(xhr.responseText);
         console.log(data);
-        
+
         const table = document.createElement("table");
 
-        data.forEach((item) => {
+        data.forEach((item: any) => {
             const row = table.insertRow();
             const cell1 = row.insertCell();
             const cell2 = row.insertCell();
