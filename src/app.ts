@@ -120,10 +120,10 @@ abstract class Vehicle {
     let hasAC = document.getElementById('hasAc') as HTMLInputElement;
     const makeCar = make?.value;
     const modelCar = model?.value;
-    const yearOfCar = year?.value;
-    const rentedCar = isRented?.value;
-    const seatInCar = numSeats?.value;
-    const carHasCar = hasAC?.value;
+    const yearOfCar : number = year?.value;
+    const rentedCar : boolean = isRented?.value == "YES" ? true : false;
+    const seatInCar : number = numSeats?.value;
+    const carHasCar : boolean = hasAC?.value == "YES" ? true : false;
 
     let car = new Car(makeCar, modelCar, yearOfCar, rentedCar, seatInCar, carHasCar);
 
