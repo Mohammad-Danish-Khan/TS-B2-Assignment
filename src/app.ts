@@ -112,12 +112,21 @@ abstract class Vehicle {
   const button = document.getElementById('vehicle');
 
   button?.addEventListener('click', function handleClick(event) {
-    let make = document.getElementById('make');
-    let model = document.getElementById('model');
-    let year = document.getElementById('year');
-    let numSeats = document.getElementById('seats');
-    let isRented = document.getElementById('rented');
-    let hasAC = document.getElementById('hasAc');
-    let car = new Car(make, model, year, numSeats, isRented, hasAC);
+    let make = document.getElementById('make') as HTMLInputElement;
+    let model = document.getElementById('model') as HTMLInputElement;
+    let year = document.getElementById('year') as HTMLInputElement;
+    let numSeats = document.getElementById('seats') as HTMLInputElement;
+    let isRented = document.getElementById('rented') as HTMLInputElement;
+    let hasAC = document.getElementById('hasAc') as HTMLInputElement;
+    const makeCar = make?.value;
+    const modelCar = model?.value;
+    const yearOfCar = year?.value;
+    const rentedCar = isRented?.value;
+    const seatInCar = numSeats?.value;
+    const carHasCar = hasAC?.value;
+
+    let car = new Car(makeCar, modelCar, yearOfCar, rentedCar, seatInCar, carHasCar);
+
+    console.log(car.returnVehicle)
 
   });
