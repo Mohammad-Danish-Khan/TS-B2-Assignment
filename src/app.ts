@@ -1,10 +1,10 @@
 abstract class Vehicle {
     make: string;
     model: string;
-    year: number;
+    year: string;
     rented: boolean;
   
-    constructor(make: string, model: string, year: number, rented: boolean) {
+    constructor(make: string, model: string, year: string, rented: boolean) {
       this.make = make;
       this.model = model;
       this.year = year;
@@ -19,7 +19,7 @@ abstract class Vehicle {
       return this.model;
     }
   
-    getYear(): number {
+    getYear(): string {
       return this.year;
     }
   
@@ -53,10 +53,10 @@ abstract class Vehicle {
   }
   
   class Car extends Vehicle {
-    numSeats: number;
+    numSeats: string;
     hasAC: boolean;
   
-    constructor(make: string, model: string, year: number, rented: boolean, numSeats: number, hasAC: boolean) {
+    constructor(make: string, model: string, year: string, rented: boolean, numSeats: string, hasAC: boolean) {
       super(make, model, year, rented);
       this.numSeats = numSeats;
       this.hasAC = hasAC;
@@ -70,15 +70,15 @@ abstract class Vehicle {
       return this.hasAC;
     }
   
-    getNumSeats(): number {
+    getNumSeats(): string {
       return this.numSeats;
     }
   }
   
   class Truck extends Vehicle {
-    maxPayload: number;
+    maxPayload: string;
   
-    constructor(make: string, model: string, year: number, rented: boolean, maxPayload: number) {
+    constructor(make: string, model: string, year: string, rented: boolean, maxPayload: string) {
       super(make, model, year, rented);
       this.maxPayload = maxPayload;
     }
@@ -87,7 +87,7 @@ abstract class Vehicle {
       return 100;
     }
   
-    getMaxPayload(): number {
+    getMaxPayload(): string {
       return this.maxPayload;
     }
   }
@@ -95,7 +95,7 @@ abstract class Vehicle {
   class Motorcycle extends Vehicle {
     hasSidecar: boolean;
   
-    constructor(make: string, model: string, year: number, rented: boolean, hasSidecar: boolean) {
+    constructor(make: string, model: string, year: string, rented: boolean, hasSidecar: boolean) {
       super(make, model, year, rented);
       this.hasSidecar = hasSidecar;
     }
@@ -120,9 +120,9 @@ abstract class Vehicle {
     let hasAC = document.getElementById('hasAc') as HTMLInputElement;
     const makeCar = make?.value;
     const modelCar = model?.value;
-    const yearOfCar : number = year?.value;
+    const yearOfCar : string = year?.value;
     const rentedCar : boolean = isRented?.value == "YES" ? true : false;
-    const seatInCar : number = numSeats?.value;
+    const seatInCar : string = numSeats?.value;
     const carHasCar : boolean = hasAC?.value == "YES" ? true : false;
 
     let car = new Car(makeCar, modelCar, yearOfCar, rentedCar, seatInCar, carHasCar);
