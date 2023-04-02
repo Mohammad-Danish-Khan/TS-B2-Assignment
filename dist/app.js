@@ -82,7 +82,18 @@ class Motorcycle extends Vehicle {
 }
 const button = document.getElementById('vehicle');
 button === null || button === void 0 ? void 0 : button.addEventListener('click', function handleClick(event) {
-    console.log('button clicked');
-    console.log(event);
-    console.log(event.target);
+    let make = document.getElementById('make');
+    let model = document.getElementById('model');
+    let year = document.getElementById('year');
+    let numSeats = document.getElementById('seats');
+    let isRented = document.getElementById('rented');
+    let hasAC = document.getElementById('hasAc');
+    const makeCar = make === null || make === void 0 ? void 0 : make.value;
+    const modelCar = model === null || model === void 0 ? void 0 : model.value;
+    const yearOfCar = year === null || year === void 0 ? void 0 : year.value;
+    const rentedCar = (isRented === null || isRented === void 0 ? void 0 : isRented.value) == "YES" ? true : false;
+    const seatInCar = numSeats === null || numSeats === void 0 ? void 0 : numSeats.value;
+    const carHasCar = (hasAC === null || hasAC === void 0 ? void 0 : hasAC.value) == "YES" ? true : false;
+    let car = new Car(makeCar, modelCar, yearOfCar, rentedCar, seatInCar, carHasCar);
+    console.log(car.returnVehicle());
 });

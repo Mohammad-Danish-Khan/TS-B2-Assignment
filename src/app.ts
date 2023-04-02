@@ -127,6 +127,6 @@ abstract class Vehicle {
 
     let car = new Car(makeCar, modelCar, yearOfCar, rentedCar, seatInCar, carHasCar);
 
-    console.log(car.returnVehicle)
+    console.log(car.returnVehicle())
 
   });
